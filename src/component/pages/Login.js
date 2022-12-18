@@ -62,7 +62,7 @@ const handleSubmit =async(e) => {
             return 
         }
          try{
-            const result = await axios.post(`/api/login`, {loginValues}, {withCredentials:true})
+            const result = await axios.post(`https://burger-app-api.onrender.com/api/login`, {loginValues}, {withCredentials:true})
                 if(result.data.verify){
                     setIsLoding(false);
                         setLoginValues(initialInputValues)
