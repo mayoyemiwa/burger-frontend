@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import {dispatchIsNotLogged, dispatchIsLoad} from '../../redux/actions/authAction';
 import {useSelector, useDispatch} from 'react-redux';
-import {url} from '../../App.js';
+// import {url} from '../../App.js';
 
 const Home = () => {
     const [click, setClick] = useState(false);
@@ -39,7 +39,7 @@ const Home = () => {
         //        dispatch(dispatchIsNotLogged())
         //     return navigate('/login', {replace: true})
         //    }
-           if(err.response.data === "Please login now") return navigate(`${url}/login`, {replace: true})
+           if(err.response.data === "Please login now") return navigate(`/login`, {replace: true})
        }
     }
     return ( 

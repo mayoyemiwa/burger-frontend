@@ -4,7 +4,7 @@ import {dispatchIsLoad} from '../../redux/actions/authAction'
 import {useState} from 'react';
 import '../../css/Forgot.css'
 import axios from 'axios';
-import {url} from '../../App.js';
+// import {url} from '../../App.js';
 
     const PwdReset = () => {
         const [pwd, setPwd] = useState('');
@@ -42,7 +42,7 @@ import {url} from '../../App.js';
                     setPwd2("")
                 }else{
                     try{
-                       const result = await axios.post(`${url}/api/pwdreset`, {pwd}, {withCredentials:true});
+                       const result = await axios.post(`/api/pwdreset`, {pwd}, {withCredentials:true});
                     // const result = await axios.post('/api/pwdreset', {pwd}, {withCredentials:true})
                        setIsLoading(false);
                        setSuccess(result.data)
