@@ -11,6 +11,7 @@ import FacebookLogin from 'react-facebook-login';
 import {gapi} from 'gapi-script';
 import facebookLogo from '../../assets/Facebook_logo.png'
 import twitterLogo from '../../assets/twitter-logo.png'
+import {url} from '../../App.js';
 axios.defaults.withCredentials = true;
 
 const Login = () => {
@@ -62,7 +63,7 @@ const handleSubmit =async(e) => {
             return 
         }
          try{
-            const result = await axios.post(`https://burger-app-api.onrender.com/api/login`, {loginValues}, {withCredentials:true})
+            const result = await axios.post(`${url}/api/login`, {loginValues}, {withCredentials:true})
                 if(result.data.verify){
                     setIsLoding(false);
                         setLoginValues(initialInputValues)
@@ -74,7 +75,7 @@ const handleSubmit =async(e) => {
         }
         catch(error){
             if(error.message === "Request failed with status code 500"){
-            return navigate('/page404', {replace: true})
+            return navigate(`/page404`, {replace: true})
            }
             setIsLoding(false)
             setLoginError({...loginError, 
@@ -93,7 +94,7 @@ const responseGoogle = async (response) => {
             gapi.auth2.init({clientId:clientId})
         })
     try{
-        const res = await axios.post(`/api/google_login`, {tokenId:response.tokenId})
+        const res = await axios.post(`${url}/api/google_login`, {tokenId:response.tokenId})
         if(res.data.verify){
             setIsLoding(false);
             setLoginValues(initialInputValues)

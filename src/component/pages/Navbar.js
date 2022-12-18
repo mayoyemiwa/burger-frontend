@@ -55,7 +55,7 @@ const unDisplayAll = () => {dispatch(dispatchUnLog_In_With.dispatchUnFacebook())
             dispatch(dispatchIsNotLogged())
             dispatch({type:"DELETE_TOKEN", payload:""})
             dispatch({type:"DELETE_USER", payload:""})
-            const result = await axios.get(`/api/logout`)
+            const result = await axios.get(`${url}/api/logout`)
             if(result){
                 navigate('/')
             }else{

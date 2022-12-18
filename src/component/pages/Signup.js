@@ -6,7 +6,8 @@ import {isEmpty, Empty, isEmail, CheckLength} from '../validation/Validation'
 import {useSelector, useDispatch} from 'react-redux'
 import {dispatchIsLoad} from '../../redux/actions/authAction';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
+import {url} from '../../App.js';
 
 const Signup = () => {
   const initialInputValues = {username:"", email:"", pwd:""};
@@ -50,7 +51,7 @@ const Signup = () => {
         }
     
              try{
-                const result = await axios.post(`/api/signup`, {signupValues});
+                const result = await axios.post(`${url}/api/signup`, {signupValues});
                 setIsLoding(false);
                 setSignupError({...signupError, username:'', email:'', pwd:'' })
                 setVerificationError(result.data.status)

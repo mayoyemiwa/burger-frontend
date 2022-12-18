@@ -2,6 +2,7 @@
   "name": "userlogin",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://burger-app-api.onrender.com",
   "secure": true,
   "homepage": "/",
   "dependencies": {

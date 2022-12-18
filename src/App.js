@@ -13,8 +13,9 @@ import PwdReset from './component/pages/PwdReset';
 import Page404 from './component/pages/Page404';
 import {useSelector, useDispatch} from 'react-redux'
 import {fetchUser, dispatchGet_User_Login} from '../src/redux/actions/authAction'
-import axios from 'axios'
+import axios from 'axios';
 
+export const URL = process.env.SERVER_URL
 
 function App() {
   const dispatch = useDispatch();
