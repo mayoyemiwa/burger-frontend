@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {dispatchIsLoad} from '../../redux/actions/authAction'
 import axios from 'axios';
-// import {url} from '../../App.js';
+import {url} from '../../App.js';
 
     const ForgetPwd = () => {
         const navigate = useNavigate()
@@ -27,7 +27,7 @@ import axios from 'axios';
             }
             else{
                 try{
-                    const result = await axios.post(`/api/forgetPwd`, {email}, {withCredentials:true});
+                    const result = await axios.post(`${url}/api/forgetPwd`, {email}, {withCredentials:true});
                     // const result = await axios.post('/api/forgetPwd', {email})
                     setSuccess(true)
                     setMessage(result.data.message)

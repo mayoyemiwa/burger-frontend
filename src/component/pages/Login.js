@@ -11,7 +11,7 @@ import FacebookLogin from 'react-facebook-login';
 import {gapi} from 'gapi-script';
 import facebookLogo from '../../assets/Facebook_logo.png'
 import twitterLogo from '../../assets/twitter-logo.png'
-// import {url} from '../../App.js';
+import {url} from '../../App.js';
 axios.defaults.withCredentials = true;
 
 const Login = () => {
@@ -63,7 +63,7 @@ const handleSubmit =async(e) => {
             return 
         }
          try{
-            const result = await axios.post(`/api/login`, {loginValues}, {withCredentials:true})
+            const result = await axios.post(`${url}/api/login`, {loginValues}, {withCredentials:true})
                 if(result.data.verify){
                     setIsLoding(false);
                         setLoginValues(initialInputValues)
@@ -94,7 +94,7 @@ const responseGoogle = async (response) => {
             gapi.auth2.init({clientId:clientId})
         })
     try{
-        const res = await axios.post(`/api/google_login`, {tokenId:response.tokenId})
+        const res = await axios.post(`${url}/api/google_login`, {tokenId:response.tokenId})
         if(res.data.verify){
             setIsLoding(false);
             setLoginValues(initialInputValues)
