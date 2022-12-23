@@ -4,7 +4,7 @@
   "proxy": "https://burger-app-api.onrender.com",
   "private": true,
   "secure": true,
-  "homepage": "https://burger-app-bj6i.onrender.com",
+  "homepage": "/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-brands-svg-icons": "^6.1.2",

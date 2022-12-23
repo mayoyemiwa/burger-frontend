@@ -7,7 +7,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {dispatchIsLoad} from '../../redux/actions/authAction';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
-import {url} from '../../App.js';
+// import {url} from '../../App.js';
 
 const Signup = () => {
   const initialInputValues = {username:"", email:"", pwd:""};
