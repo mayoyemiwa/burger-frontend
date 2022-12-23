@@ -1,7 +1,7 @@
 {
   "name": "userlogin",
   "version": "0.1.0",
-  "proxy":"https://burger-app-api.onrender.com",
+  "proxy": "https://burger-app-api.onrender.com",
   "private": true,
   "secure": true,
   "homepage": "https://burger-app-bj6i.onrender.com",
@@ -20,6 +20,7 @@
     "dialogflow": "^1.2.0",
     "express": "^4.17.2",
     "gapi-script": "^1.2.0",
+    "http-proxy-middleware": "^2.0.6",
     "jquery": "^3.6.0",
     "nodemon": "^2.0.15",
     "popper.js": "^1.16.1",
