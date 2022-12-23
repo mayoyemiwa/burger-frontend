@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import {dispatchIsNotLogged, dispatchIsLoad} from '../../redux/actions/authAction';
 import {useSelector, useDispatch} from 'react-redux';
-import {url} from '../../App.js';
+// import {url} from '../../App.js';
 
 const Home = () => {
     const [click, setClick] = useState(false);
@@ -21,7 +21,7 @@ const Home = () => {
         
        try{
            console.log("before")
-            const result = await axios.post(`${url}/api/orders`, {token}, {withCredentials:true});
+            const result = await axios.post(`/api/orders`, {token}, {withCredentials:true});
             console.log("after")
                 if (result.data.verify) return navigate('/orders', { replace: true })
        }

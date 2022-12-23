@@ -51,7 +51,7 @@ const Signup = () => {
         }
     
              try{
-                const result = await axios.post(`${url}/api/signup`, {signupValues});
+                const result = await axios.post(`/api/signup`, {signupValues});
                 setIsLoding(false);
                 setSignupError({...signupError, username:'', email:'', pwd:'' })
                 setVerificationError(result.data.status)
